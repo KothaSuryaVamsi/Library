@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<center> <font color="blue">ACDEMIC DETAILS</font></center>
+<hr>
+<script language="javascript">
+function validate()
+{
+var x=window.document.stdinfo.name.value;
+var y=window.document.stdinfo.fathername.value;
+var z=window.document.stdinfo.secondaryeducation.value;
+var a=window.document.stdinfo.presentcollege.value;
+var b=window.document.stdinfo.jntuno.value;
+check=/^[a-z A-Z]+$/;
+check1=/^[a-z A-Z]+$/;
+check3=/^[a-z A-Z]+$/;
+check4=/^[a-z A-Z]+$/;
+check5=/^1[1-9]{1}341[A-H a-h]{1}0[1-9]{1}[a-z A-Z 1-9]{2}$/;
+if(!x.match(check))
+alert("enter name correctly");
+if(x.length<6)
+{
+alert("min 10");
+}
+if(!y.match(check1))
+alert("enter fathername correctly");
+if(y.length<6)
+{
+alert("min 10");
+}
+if(!z.match(check3))
+alert("enter se name correctly");
+if(z.length<6)
+{
+alert("min 2");
+}
+if(!a.match(check4))
+alert("enter presentcollege name correctly");
+if(a.length<6)
+{
+alert("min 5");
+}
+if(!b.match(check5))
+alert("enter jntuno correctly");
+if(b.length<6)
+{
+alert("min 5");
+}
+}
+</script>
+</head>
+<form name="stdinfo" onSubmit="validate()" action="stdinfo.php" method="post">
+<pre>
+<font size="+2">Name:</font>                   <input type="text" name="name"/>
+<br>
+<font size="+2">Fathername:</font>          <input type="text" name="fathername"/>
+<br>
+<font size="+2">10thclassmarks:</font>    <input type="text" name="10thclassmarks"/>
+<br>
+<font size="+2">Secondary education:</font>   <input type="text" name="secondaryeducation"/>
+<br>
+<font size="+2">Present college:</font>         <input type="text" name="presentcollege"/>
+<br>
+<font size="+2">Jntuno:</font>                       <input type="text" name="jntuno"/>
+<br>
+<font size="+2">cgpa:</font>                          <input type:"text" name="cgpa"/>
+<br>
+</pre>
+<font size="+1"><input type="radio" name="gender" value="male">Male</font> 
+<font size="+1"><input type="radio" name="gender" value="female">Female</font>
+<br>
+<input type="reset" value="Reset"/>
+<input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

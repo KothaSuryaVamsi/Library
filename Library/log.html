@@ -1,0 +1,69 @@
+<html>
+  <head>
+   <title>Login</title>
+<script type="text/javascript">
+function validate(form1)
+{
+var loginid=window.document.form1.username.value;
+var pass=window.document.form1.pass.value;
+check=new RegExp("[^a-zA-Z]{1,}","g");
+if(loginid.length<1)
+{
+    document.getElementById('h').innerHTML="Username cannot be null";
+           return false;
+}
+else
+document.getElementById('h').innerHTML="";
+if(loginid.match(check))
+{
+document.getElementById('a').innerHTML="name is only alphanumeric";
+return false;
+}
+else
+document.getElementById('a').innerHTML="";	
+if(pass.length<3)
+{
+  document.getElementById('b').innerHTML="password  should have length more than 3";
+  return false;
+}
+else
+	document.getElementById('b').innerHTML="";
+return true;
+}
+</script>
+ </head>
+  <body>
+<br><br><center><h2 style="color:red" >LOGIN FORM</h2></center><br>
+<form name="form1" method="post" action="log.php">
+<center><fieldset>
+    <legend> LOGIN DETAIL</legend>
+<table cellspacing="10" cellpadding="5" border=0>
+<tr>
+  <td>User Name: </td>
+  <td><input type="text" name="username"></td><td></td><br><br>
+</tr>
+<tr>
+  <td></td>
+  <td><font color="blue" size="1 "><span id="h"></span></font></td><td><font color="blue" size="1 "><span id="a"></span></font></td>
+</tr>
+<tr>
+  <td >Password:</td>
+  <td> <input type="password" name="pass"></td><br>
+</tr>
+<tr>
+  <td></td>
+  <td><font color="blue" size="1 "><span id="b"></span></font></td>
+</tr>
+<tr>
+  <td></td>
+  <td><a href="forget.html">forgot password</a></td>
+</tr>
+<tr>
+  <td></td>
+  <td><input type="submit" value="submit" onclick="return validate(this)" ></td>
+</tr>
+</table>
+</fieldset>
+    </center></form> 
+ </body>
+</html>

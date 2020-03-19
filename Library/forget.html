@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forgot Password</title>
+	<script type="text/javascript">
+		function validate(form1)
+		{
+			var k=0;
+			var pass=document.form1.pass.value;
+			var ans=document.form1.answer.value;
+			if(ans.length==0)
+			{
+				document.getElementById('ans').innerHTML="Answer cannot be null";
+				k=1;
+			}
+			else
+				document.getElementById('ans').innerHTML="";
+var cpass=document.form1.cpass.value;
+if(pass.length<8)
+{
+	document.getElementById('p').innerHTML="atleast 8 characters";
+	k=1;
+}
+else
+document.getElementById('p').innerHTML="";
+if(pass.length!=cpass.length)
+{
+	document.getElementById('cp').innerHTML="Passwords dont match";
+	k=1;
+}
+else
+document.getElementById('cp').innerHTML="";
+for(var i=0;i<pass.length;i++)
+{
+	if(pass.charAt(i)!=cpass.charAt(i))
+	{
+		document.getElementById('cp').innerHTML="Passwords dont match";
+		k=1;
+		break;
+	}
+}
+if(k==0)
+	return true;
+return false;
+		}
+	</script>
+</head>
+<body>
+	<br>
+	<br><br><br><br>
+	<form name="form1" method="post" action="forget.php">
+	<center>
+		<h2><font color="red">Forgot Password</font></h2>
+		<table cellspacing="10" cellpadding="10" margin-left="10%">
+		<tr>
+			<td>User Id</td>
+			<td><input type="text" name="userid"></td>
+		</tr>
+		<tr>
+			<td>Security Question</td>
+			<td><select name="question">
+			<option value="1">What is your pet Name?</option>
+			<option value="2">who is your inspiration?</option>
+			<option value="3">First four digits of your phone number?</option>
+			<option value="4">what is your birth place?</option>
+			<option value="5">what is your favourite dish?</option>
+			</select>
+		</tr>
+		<tr>
+			<td>Security Answer</td>
+			<td><input type="text" name="answer"></td>
+			<td><font color="blue" size="1 "><span id="ans"></span></font></td>
+		</tr>
+		<tr>
+			<td>Reset Password</td>
+			<td><input type="Password" name="pass"></td>
+			<td><font color="blue" size="1 "><span id="p"></span></font></td>
+		</tr>
+		<tr>
+			<td>Confirm Password</td>
+			<td><input type="Password" name="cpass"></td><td><font color="blue" size="1 "><span id="p"></span></font></td>
+			<td><font color="blue" size="1 "><span id="cp"></span></font></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="submit" value="Submit" onclick="return validate(this)"></td>
+		</tr>
+	</table></form></center>
+</body>
+</html>

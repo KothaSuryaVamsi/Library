@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Profile</title>
+	<script type="text/javascript">
+		function validate(form1)
+		{
+			var k=0;
+			var fname=window.document.form1.fname.value;
+			var lname=window.document.form1.lname.value;
+			var k=0;
+			phn=new RegExp("[0-9]{10}","g");
+			if(fname.length==0 || lname.length==0)
+			{
+				document.getElementById('a').innerHTML="Name should be filled";
+				k=1;
+			}
+			else
+				document.getElementById('a').innerHTML="";
+			 var dateInput = document.form1.date.value;
+/* var goodDate = /(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/;
+   if (!(dateInput.match(goodDate)))
+{
+       document.getElementById('dt').innerHTML="Date must be filled";
+	k=1;
+    }
+else
+document.getElementById('dt').innerHTML="";
+*/
+var phone=document.form1.phone.value;
+if(!phone.match(phn))
+{
+	document.getElementById('ph').innerHTML="Invalid Phone number";
+	k=1;
+}
+else
+document.getElementById('ph').innerHTML="";
+m=new RegExp("[a-zA-Z0-9]{1,}@gmrit.edu.in")
+var mail=document.form1.mail.value;
+if(!mail.match(m))
+{
+	document.getElementById('m').innerHTML="Invalid Mail id";
+	k=1;
+}
+else
+document.getElementById('m').innerHTML="";
+var uid=document.form1.uid.value;
+if(uid.length==0)
+{
+	document.getElementById('uid').innerHTML="UID cant be null";
+	k=1;
+}
+else
+	document.getElementById('uid').innerHTML="";
+		if(k==0)
+			return true;
+		return false;
+		}
+	</script>
+</head>
+<body>
+		<form name="form1" method="post" action="profile.php">
+		<b>
+			<center>
+				<H2 STYLE="COLOR:RED">REGISTERATION FORM</H2>
+			</CENTER>
+			<table cellspacing="5" class="t1s">
+				<tr>
+					<td>Name</td>
+					<td style="width:50"><input type="text" style="width:150" name="fname" placeholder="First Name" ></td>
+					<td><input type="text" name="lname" placeholder="Last Name"></td>
+					<td><font color="blue" size="1 "><span id="a"></span></font></td>
+				</tr>
+<!--<tr>
+<td> date  of birth</td>
+<td> <input type="date" name= "date" /></td>
+<td><font color="blue" size="1 "><span id="dt"></span></font></td><br><br>
+</tr>
+-->
+<tr>
+<td>E-mail</td>
+<td><input type="text" name="mail"></td>
+	<td><font color="blue" size="1 "><span id="m"></span></font></td>
+</tr>
+<tr>
+<td>Phone.No</td>
+<td><input type="text" name="phone" maxlength="10"></td>
+<td><font color="blue" size="1 "><span id="ph"></span></font></td>
+</tr>
+<tr>
+	<td>User Id</td>
+	<td><input type="text" name="uid"></td>
+	<td><font color="blue" size="1 "><span id="uid"></span></font></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" VALUE="Update" onclick="return validate(this)"></td>
+</tr>
+</table>
+</b>	</form>
+</body>
+</html>

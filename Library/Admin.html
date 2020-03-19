@@ -1,0 +1,41 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function validate(form1){
+		var name=window.document.form1.usname.value;
+		var pass=window.document.form1.pwd.value;
+		for(var i=0;i<pass.length;i++)
+{
+	if(pass.charAt(i)!=name.charAt(i))
+	{
+		document.getElementById('c').innerHTML="Passwords dont match";
+		return false;
+	}
+}return true;
+		/*if(name.localeCompare(pass)){
+			if(name.localeCompare("admin"))
+				return true;
+			else
+				return false
+		}*/
+		}
+	</script>
+</head>
+<body>
+	<form name="form1" action="adminavt.html">
+<table align ="center">
+	<tr>
+		<td>Username:</td>
+		<td><input type="text" name="usname"></td>
+	</tr>
+	<tr>
+		<td>password:</td>
+		<td><input type="password" name="pwd"></td>
+	</tr>
+	<tr><td colspan="2" align="center"><input type="submit" value="submit"  onclick="return validate(this)"></td>
+	<td><font color="blue" size="1 "><span id="c"></span></font></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

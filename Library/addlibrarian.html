@@ -1,0 +1,153 @@
+<html>
+<head>
+	<style >
+		table.t1s{
+			margin-left: 10%;
+		}
+	</style>
+<script type="text/javascript">
+function validate(form1)
+{
+var fname=window.document.form1.fname.value;
+var lname=window.document.form1.lname.value;
+var k=0;
+phn=new RegExp("[0-9]{10}","g");
+if(fname.length==0 || lname.length==0)
+{
+	document.getElementById('a').innerHTML="Name should be filled";
+	k=1;
+}
+else
+document.getElementById('a').innerHTML="";
+/*var g=document.form1.gender.value;
+if(g=='')
+{
+	document.getElementById('g').innerHTML="Gender should be selected";
+	k=1
+}
+else
+document.getElementById('g').innerHTML="";
+*/
+var uname=document.form1.uname.value;
+if(uname.length==0)
+{
+	document.getElementById('u').innerHTML="Username should be filled";
+	k=1;
+}
+else
+document.getElementById('u').innerHTML="";
+var pass=document.form1.pass.value;
+var cpass=document.form1.cpass.value;
+if(pass.length<8)
+{
+	document.getElementById('p').innerHTML="atleast 8 characters";
+	k=1;
+}
+else
+document.getElementById('p').innerHTML="";
+if(pass.length!=cpass.length)
+{
+	document.getElementById('cp').innerHTML="Passwords dont match";
+	k=1;
+}
+else
+document.getElementById('cp').innerHTML="";
+for(var i=0;i<pass.length;i++)
+{
+	if(pass.charAt(i)!=cpass.charAt(i))
+	{
+		document.getElementById('cp').innerHTML="Passwords dont match";
+		k=1;
+		break;
+	}
+}
+/*if(pass.equals(cpass))
+{
+	document.write("hello");
+	document.getElementById('cp').innerHTML="Passwords did'nt match";
+	k=1;
+}
+else
+document.getElementById('cp').innerHTML="";
+*/
+var phone=document.form1.phone.value;
+if(!phone.match(phn))
+{
+	document.getElementById('ph').innerHTML="Invalid Phone number";
+	k=1;
+}
+else
+document.getElementById('ph').innerHTML="";
+var mail=document.form1.mail.value;
+if(!mail.substring(4).localeCompare("@gmrit.edu.in"))
+{
+	document.getElementById('m').innerHTML="Invalid Mail id";
+	k=1;
+}
+else
+document.getElementById('m').innerHTML="";
+if(k==0)
+	return true;
+return false;
+}
+</script>
+<head/>
+<body>
+	<form name="form1" method="post" action="lreg.php">
+		<b>
+			<center>
+				<H2 STYLE="COLOR:RED">LIBRARIAN REGISTERATION FORM</H2>
+			</CENTER>
+			<table cellspacing="5" class="t1s">
+				<tr>
+					<td>Name</td>
+					<td style="width:50"><input type="text" style="width:150" name="lfname" placeholder="First Name" ></td>
+					<td><input type="text" name="llname" placeholder="Last Name"></td>
+					<td><font color="blue" size="1 "><span id="a"></span></font></td>
+				</tr>
+
+<!--<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="lgender" >Male</input>
+<input type="radio" name="lgender" >Female</input>
+<input type="radio" name="lgender" >Other</input>
+</td>
+<td><font color="blue" size="1 "><span id="g"></span></font></td>
+</tr>-->
+<tr>
+	<td>Librarian Id<td><input type="text" name="lid"></td>
+	<td><font color="blue" size="1 "><span id="u"></span></font></td><br><br>
+</tr>
+	
+<tr>
+	<td >Password</td><td> <input type="password" name="lpass"></td>
+	<td><font color="blue" size="1 "><span id="p"></span></font></td><br><br>
+</tr>
+<tr>
+	<td >Confirm Password</td><td> <input type="password" name="lcpass"></td>
+	<td><font color="blue" size="1 "><span id="cp"></span></font></td><br><br>
+</tr>
+<tr>
+<td> date </td>
+<td> <input type="date" name= "ldate" /></td>
+<td><font color="blue" size="1 "><span id="p"></span></font></td><br><br>
+</tr>
+
+<tr>
+<td>E-mail</td>
+<td><input type="text" name="lmail"></td>
+	<td><font color="blue" size="1 "><span id="m"></span></font></td>
+</tr>
+<tr>
+<td>Phone.No</td>
+<td><input type="text" name="lphone" maxlength="10"></td>
+<td><font color="blue" size="1 "><span id="ph"></span></font></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" VALUE="Submit" onclick="return validate(this)"></td>
+</tr>
+</table>
+</b>	</form>
+</body>
+</html>

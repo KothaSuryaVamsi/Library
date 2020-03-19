@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Hospital</title>
+
+<style type="text/css">
+a:visited{color: #33001a;}
+a:hover{color: 000000;}
+a:active{color: black;}
+a{text-decoration: none;}
+a
+{
+ background-color:#0000b3;
+ border-radius:20px;
+ text-decoration:none;
+ text-align:center;
+ padding:20px;
+ color:white;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+</style>
+</head>
+<body >
+	<audio id="audio1">
+		<source src="a.ogg" type="audio/ogg">
+		<source src="a.mpeg" type="audio/mpeg">
+	</audio>
+<h><center><font size=10 color=red>LIBRARY</font></center></h>
+<!--<marquee behavior="alternate" onmouseover="x.play();this.stop();" onmouseout="x.pause();this.start();"><font size=3 color="white">Welcome to library. We provide service 24 X 7.</font></marquee>
+<font size=6><p  align="right">-->
+<table cellspacing="10" cellpadding="5" align="right">	
+<tr>
+<td rowspan="2" >		
+<div class="dropdown">
+<a>Student</a>
+  <div class="dropdown-content">
+    <a href="log.html" target="left">SignIn</a>
+    <a href="reg.html" target="left">SignUp</a>
+  </div>
+</div>
+</td>
+
+<td rowspan="2" >		
+<div class="dropdown">
+<a>Admin</a>
+  <div class="dropdown-content">
+    <a href="Admin.html" target="left">Admin</a>
+    <a href="librarian.html" target="left">Libraian</a>
+  </div>
+</div>
+</td>
+   </tr>
+</table>
+	<script type="text/javascript">
+		var x=document.getElementById("audio1");
+	</script>
+</body>
+</html>
